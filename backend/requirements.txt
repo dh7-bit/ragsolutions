@@ -9,3 +9,6 @@ requests
 python-dotenv
 langchain-text-splitters
 gunicorn
+langchain
+langchain-community
+langchain-core
