@@ -27,6 +27,10 @@ export default function Upload() {
   useEffect(() => {
     setShowHeader(true);
     setSessionId(getSessionId());
+    const isDone = localStorage.getItem("upload_done");
+  if (isDone === "true") {
+    setDone(true);
+  }
   }, []);
 
   const handleFileChange = (e) => {
@@ -82,6 +86,7 @@ export default function Upload() {
             if (data.status === "done") {
               toast.success("PDF processed successfully");
               setDone(true);
+               localStorage.setItem("upload_done", "true");
 
               // ⏳ auto close overlay after delay
               setTimeout(() => {
@@ -170,7 +175,17 @@ export default function Upload() {
           >
             Upload
           </button>
-
+          <button
+  disabled={!done}
+  onClick={() => window.location.href = "/chat"}
+  className={`mt-4 w-full py-3 rounded-xl font-semibold transition 
+    ${done 
+      ? "bg-green-600 hover:bg-green-700 text-white" 
+      : "bg-gray-300 text-gray-500 cursor-not-allowed"}
+  `}
+>
+  Open Chatbot
+</button>
           {done && !loading && (
             <div className="mt-5 text-green-600 font-semibold">
               Uploaded Successfully ✓
