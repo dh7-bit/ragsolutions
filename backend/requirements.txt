@@ -3,12 +3,9 @@ flask-cors
 chromadb
 numpy
 sentence-transformers
-torch
-transformers
 requests
 python-dotenv
 langchain-text-splitters
 gunicorn
 langchain
 langchain-community
-langchain-core
