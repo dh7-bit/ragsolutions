@@ -57,6 +57,4 @@ Text is converted into numerical vectors that represent semantic meaning.
 ### Cosine Similarity
 Used to measure similarity between query vector and document chunk vectors.
 
----
 
-## 📂 Project Structure
